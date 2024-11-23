@@ -1,0 +1,76 @@
+    document.addEventListener('DOMContentLoaded', () => {
+    let campoResultado = document.getElementById('resultados');
+    let campoCartela = document.getElementById('sua-cartela');
+    let botaoEnviar = document.getElementById('botao-calcular');
+    })
+
+    function preparaResultado(resultado) {
+        const resultados = resultado.match(rgxPalpite).toString().replace(rgxhifen, '').replace(rgxbarra, ',').split(','); // Exemplo: separa por vírgulas
+        resultados[0] == 99 ? resultados[0] = '196' : resultados[0]
+        resultados[1] == 99 ? resultados[1] = '196' : resultados[1]
+        resultados[2] == 99 ? resultados[2] = '196' : resultados[2]
+        resultados[3] == 99 ? resultados[3] = '196' : resultados[3]
+        resultados[4] == 99 ? resultados[4] = '196' : resultados[4]
+        resultados[5] == 99 ? resultados[5] = '196' : resultados[5]
+        resultados[6] == 99 ? resultados[6] = '196' : resultados[6]
+        resultados[7] == 99 ? resultados[7] = '196' : resultados[7]
+        resultados[8] == 99 ? resultados[8] = '196' : resultados[8]
+        resultados[9] == 99 ? resultados[9] = '196' : resultados[9]
+        while (resultados.lenght < 12) {
+            resultados.push('198')
+        }
+        console.log("Resultados processados:", resultados);
+        return resultados;
+    }
+
+    function preparaCartela(cartela) {
+        const nomePalpite = cartela.replace(regexEmoji, '').replace(rgxNumDp, ' ').match(rgxNomeEPalpite).toString()
+        const nomes = nomePalpite.match(rgxNome)
+        const palpites = nomePalpite.match(rgxPalpite)
+        const palpiteFake = ['199', '199', '199', '199', '199', '199', '199', '199', '199', '199', '199', '199']
+        console.log(palpites)
+
+        let jog1 = palpites[0].replace(rgxhifen, '').replace(rgxbarra, ',').split(',')
+        let jog2 = palpites[1].replace(rgxhifen, '').replace(rgxbarra, ',').split(',')
+        let jog3 = palpites[2].replace(rgxhifen, '').replace(rgxbarra, ',').split(',')
+        let jog4 = palpites[3].replace(rgxhifen, '').replace(rgxbarra, ',').split(',')
+        let jog5 = palpites[4].replace(rgxhifen, '').replace(rgxbarra, ',').split(',')
+        let jog6 = palpites[5].replace(rgxhifen, '').replace(rgxbarra, ',').split(',')
+        let jog7 = palpites[6].replace(rgxhifen, '').replace(rgxbarra, ',').split(',')
+        let jog8 = palpites[7]
+        palpites[7] == undefined ? jog8 = palpiteFake : jog8 = palpites[7].replace(rgxhifen, '').replace(rgxbarra, ',').split(',')
+        let jog9 = palpites[8]
+        palpites[8] == undefined ? jog9 = palpiteFake : jog9 = palpites[8].replace(rgxhifen, '').replace(rgxbarra, ',').split(',')
+        let jog10 = palpites[9]
+        palpites[9] == undefined ? jog10 = palpiteFake : jog10 = palpites[9].replace(rgxhifen, '').replace(rgxbarra, ',').split(',')
+
+        // if (palpites.length <= 7) {
+        //     //alert('deu ruim, foi wo na fmw')
+        //     console.log('deu ruim, foi WO na fmw')
+        // }
+
+        console.log(nomes[0], jog1);
+        console.log(nomes[1], jog2)
+        console.log(nomes[2], jog3)
+        console.log(nomes[3], jog4)
+        console.log(nomes[4], jog5)
+        console.log(nomes[5], jog6)
+        console.log(nomes[6], jog7)
+        console.log(nomes[7], jog8)
+        console.log(nomes[8], jog9)
+        console.log(nomes[9], jog10)
+
+        return cartela
+    }
+
+// Evento de clique no botão
+    botaoEnviar.addEventListener('click', () => {
+        let resultado = campoResultado.value; // Captura o valor atual do campo
+        let cartela = campoCartela.value;     // Captura o valor da cartela (se necessário)
+
+        //console.log("Valor da cartela:", cartela); // Exibe no console para depuração
+        //console.log(resultado)
+        const resultadosProcessados = preparaResultado(resultado);
+        const cartelaProcesada = preparaCartela(cartela)
+        // Você pode fazer algo mais aqui, como comparar os resultados e a cartela
+    });

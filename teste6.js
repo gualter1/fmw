@@ -104,6 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
     comparaçao()
+    
     // Evento de clique no botão
     botaoEnviar.addEventListener('click', () => {
         let resultado = campoResultado.value; // Captura o valor atual do campo

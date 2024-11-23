@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Simples</title>
+    <link rel="stylesheet" href="estilo.css"> <!-- Linkando o CSS -->
+</head>
+<body>
+    <div class="container">
+        <h1></h1>
+        <form>
+            <label for="caixa1">Resultados da rodada:</label><br>
+            <input type="text" id="caixa1" name="caixa1" placeholder="1-1/2-2/3-3/4-4/5-5/6-6/7-7/8-8"><br><br>
+            
+            <label for="caixa2">Digite sua cartela aqui:</label><br>
+            <input type="text" id="caixa2" name="caixa2" placeholder=" "><br><br>
+            
+            <button type="button" onclick="fazerSumula()">Enviar</button>
+        </form>
+        <h2></h2>
+            <p class="texto__paragrafo"></p>
+    </div>
+
+    <script src="main.js" defer></script>
+    <!-- <script>
+        function alertar() {
+            alert('Formulário enviado!');
+        }
+    </script> -->
+</body>
+</html>

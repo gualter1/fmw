@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futebol - Formulário</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Futebol - Formulário</h1>
+        <p>
+            Bem-vindo ao formulário de futebol! Siga as instruções abaixo para utilizá-lo:
+        </p>
+        <ul>
+            <li>Na primeira caixa de texto, escreva uma mensagem curta com até 5 linhas.</li>
+            <li>Na segunda caixa de texto, insira informações mais detalhadas, podendo usar até 30 linhas.</li>
+            <li>Clique no botão "Enviar" para enviar suas informações.</li>
+            <li>Note que o botão "Desabilitado" está apenas para exibição e não pode ser clicado.</li>
+            <li>Preencha as informações com clareza e complete todos os campos necessários antes de enviar.</li>
+        </ul>
+        <form>
+            <label for="caixa-media">Escreva aqui (5 linhas):</label>
+            <textarea id="resultados" rows="5" cols="30"></textarea>
+            
+            <label for="caixa-grande">Escreva aqui (30 linhas):</label>
+            <textarea id="sua-cartela" rows="30" cols="50"></textarea>
+            
+            <div class="buttons">
+                <button type="button" id="botao-calcular">Enviar</button>
+                <button type="button" id="botao-desabilitado" disabled>Desabilitado</button>
+            </div>
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
